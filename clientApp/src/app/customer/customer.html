@@ -1,0 +1,27 @@
+<h3>customer Component</h3>
+<p>Welcome to Angular Seed</p>
+<hr>
+<input type="text" placeholder="email" [(ngModel)]="newlogin.email">
+<input type="text" placeholder="password" [(ngModel)]="newlogin.password">
+<button (click)="login()">login</button>
+<button (click)="register()">register</button>
+<hr>
+<br><br>
+<button (click)="findCustomer()">Get Customers</button>
+<br>
+<input type="text" placeholder="name" [(ngModel)]="newCustomer.name">
+<input type="text" placeholder="comment" [(ngModel)]="newCustomer.age">
+<button (click)="createCustomer()">Create Customer</button>
+<br><br>
+<div *ngFor="let c of customers$ | async" class="card">
+    <img src="http://www.w3schools.com/w3css/img_avatar2.png" alt="Avatar" style="width:100%">
+    <div class="container">
+        <h4><b>{{c.name}}</b> - <a href="#/customer" (click)="removeMsg(c._id)">Remove</a></h4>
+        <p>{{c.age}}</p>
+        
+   </div>
+</div>
+
+<br>
+<br>
+<br>

@@ -1,0 +1,21 @@
+<h3>message Component</h3>
+<p>This is the about component!</p>
+<br><br>
+<button (click)="findMsg()">Get Messages</button>
+<br>
+<input type="text" placeholder="name" [(ngModel)]="newMessage.name">
+<input type="text" placeholder="comment" [(ngModel)]="newMessage.comment">
+<button (click)="createMsg()">Create Messages</button>
+<br><br>
+<div *ngFor="let m of messages$ | async" class="card">
+    <img src="http://www.w3schools.com/w3css/img_avatar2.png" alt="Avatar" style="width:100%">
+    <div class="container">
+        <h4><b>{{m.name}}</b> - <a href="#/message" (click)="removeMsg(m._id)">Remove</a></h4>
+        <p>{{m.comment}}</p>
+        
+   </div>
+</div>
+
+<br>
+<br>
+<br>
